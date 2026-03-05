@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwipeRail — Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f12;
+      --surface: #13161b;
+      --border: #1e2228;
+      --text: #e8eaf0;
+      --muted: #6b7280;
+      --accent: #4f8ef7;
+      --accent-dim: rgba(79, 142, 247, 0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      line-height: 1.75;
+      min-height: 100vh;
+      padding: 0 1.5rem;
+    }
+
+    /* Background grid */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 48px 48px;
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 5rem 0 6rem;
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: 4rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .app-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(79, 142, 247, 0.25);
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-bottom: 1.75rem;
+    }
+
+    .app-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease infinite;
+    }
+
+    h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 13px;
+      border-left: 2px solid var(--border);
+      padding-left: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    /* TL;DR card */
+    .tldr {
+      background: var(--accent-dim);
+      border: 1px solid rgba(79, 142, 247, 0.2);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3.5rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .tldr-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .tldr p {
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* Sections */
+    .section {
+      border-top: 1px solid var(--border);
+      padding: 2.25rem 0;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .section:nth-child(3) { animation-delay: 0.15s; }
+    .section:nth-child(4) { animation-delay: 0.2s; }
+    .section:nth-child(5) { animation-delay: 0.25s; }
+    .section:nth-child(6) { animation-delay: 0.3s; }
+    .section:nth-child(7) { animation-delay: 0.35s; }
+
+    .section-num {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 1.1rem;
+    }
+
+    p {
+      color: #9ca3af;
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 0.85rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* Data table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.25rem;
+      font-size: 12.5px;
+    }
+
+    .data-table th {
+      text-align: left;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 1rem 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 0.65rem 1rem 0.65rem 0;
+      border-bottom: 1px solid var(--border);
+      color: #9ca3af;
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .data-table td:first-child {
+      color: var(--text);
+      white-space: nowrap;
+      padding-right: 1.5rem;
+    }
+
+    /* Pill */
+    .pill {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(34, 197, 94, 0.1);
+      color: #4ade80;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 3px;
+      padding: 2px 7px;
+    }
+
+    /* Contact */
+    .contact-link {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(79, 142, 247, 0.3);
+      transition: border-color 0.2s;
+    }
+    .contact-link:hover { border-color: var(--accent); }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+
+    @media (max-width: 500px) {
+      h1 { font-size: 2rem; }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="header">
+      <div class="app-tag">SwipeRail for Android</div>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Effective date: March 2026 &nbsp;·&nbsp; Version 1.0</p>
+    </header>
+
+    <div class="tldr">
+      <div class="tldr-label">TL;DR</div>
+      <p>SwipeRail does not collect, transmit, or share any personal data. Everything the app does stays entirely on your device. No servers. No analytics. No ads.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">01</div>
+      <h2>What SwipeRail does</h2>
+      <p>SwipeRail is a standalone alphabetical app launcher for Android. It reads the list of apps installed on your device so it can display them in an A–Z list, and it remembers a small amount of your preferences (pinned apps, hidden apps, and handedness setting) locally on your device.</p>
+      <p>That's it. The app has no internet connection and communicates with no external services.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">02</div>
+      <h2>Data stored on your device</h2>
+      <p>SwipeRail stores the following data locally in Android SharedPreferences. None of this data ever leaves your device.</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Purpose</th>
+            <th>Stored where</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pinned app package names</td>
+            <td>Remembers which apps you've pinned to the favourites row</td>
+            <td>On-device only</td>
+          </tr>
+          <tr>
+            <td>Hidden app package names</td>
+            <td>Remembers which apps you've chosen to hide</td>
+            <td>On-device only</td>
+          </tr>
+          <tr>
+            <td>Handedness preference</td>
+            <td>Remembers whether you prefer the scrubber on the left or right edge</td>
+            <td>On-device only</td>
+          </tr>
+          <tr>
+            <td>Installed app list</td>
+            <td>Displayed in the launcher list; held in memory only, never written to disk</td>
+            <td>In-memory only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-num">03</div>
+      <h2>Permissions explained</h2>
+      <p>SwipeRail requests two Android permissions.</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why it's needed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>QUERY_ALL_PACKAGES</td>
+            <td>Required on Android 11+ to enumerate all installed apps for display in the launcher list. App names and package names are used only within the app and are never transmitted.</td>
+          </tr>
+          <tr>
+            <td>VIBRATE</td>
+            <td>Used for haptic feedback (a light tick) when dragging across the A–Z scrubber. No data is involved.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 1.25rem;">SwipeRail does <strong style="color: var(--text);">not</strong> request internet access, overlay permissions, accessibility service access, or any foreground service permissions.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">04</div>
+      <h2>Data sharing &amp; third parties</h2>
+      <p>SwipeRail shares no data with any third party — because it collects none. There are no advertising SDKs, no analytics libraries, no crash reporting services, and no remote servers of any kind involved in the operation of this app.</p>
+      <p><span class="pill">confirmed</span> &nbsp;Zero third-party data sharing.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">05</div>
+      <h2>Children's privacy</h2>
+      <p>SwipeRail does not knowingly collect any information from anyone, including children under the age of 13. As no data is collected at all, the app is safe for users of any age.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">06</div>
+      <h2>Changes to this policy</h2>
+      <p>If a future version of SwipeRail introduces features that change how data is handled, this page will be updated and the effective date revised. The policy will always reflect the current published version of the app.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">07</div>
+      <h2>Contact</h2>
+      <p>Questions about this privacy policy? Reach out at <a class="contact-link" href="mailto:hello@swiperail.app">hello@swiperail.app</a>.</p>
+      <p style="color: var(--muted); font-size: 12px; margin-top: 0.5rem;">(Update this address to your actual contact email before publishing.)</p>
+    </div>
+
+    <footer class="footer">
+      <span>SwipeRail &copy; 2026</span>
+      <span>Android App &nbsp;·&nbsp; No data collected</span>
+    </footer>
+
+  </div>
+</body>
+</html>
